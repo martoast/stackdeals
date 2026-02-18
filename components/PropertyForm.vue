@@ -438,153 +438,6 @@
             </div>
           </div>
 
-          <!-- Additional Details -->
-          <details
-            class="group bg-zinc-900/50 backdrop-blur-sm rounded-xl border border-zinc-800 shadow-xl overflow-hidden"
-          >
-            <summary
-              class="cursor-pointer p-4 sm:p-6 hover:bg-zinc-800/30 transition-colors duration-200 flex items-center justify-between"
-            >
-              <h3
-                class="text-lg sm:text-xl font-semibold text-white flex items-center"
-              >
-                <svg
-                  class="w-5 h-5 mr-2 text-gold"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Additional Details
-              </h3>
-              <svg
-                class="w-5 h-5 text-zinc-500 transform group-open:rotate-180 transition-transform duration-200"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </summary>
-
-            <div class="p-4 sm:p-6 pt-0 border-t border-zinc-800">
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div>
-                  <label
-                    for="rent-zestimate"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Est. Rent (Zillow)
-                  </label>
-                  <input
-                    v-model.number="property.rent_zestimate"
-                    type="number"
-                    step="1"
-                    min="0"
-                    id="rent-zestimate"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="2500"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="zestimate"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Est. Value (Zillow)
-                  </label>
-                  <input
-                    v-model.number="property.zestimate"
-                    type="number"
-                    step="1"
-                    min="0"
-                    id="zestimate"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="300000"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="price_per_square_foot"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Price Per Sq Ft
-                  </label>
-                  <input
-                    v-model.number="property.price_per_square_foot"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    id="price_per_square_foot"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="150"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="year-built"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Year Built
-                  </label>
-                  <input
-                    v-model.number="property.year_built"
-                    type="number"
-                    step="1"
-                    min="1000"
-                    max="2100"
-                    id="year-built"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="1990"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="lot-size"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Lot Size (sq ft)
-                  </label>
-                  <input
-                    v-model.number="property.lot_size"
-                    type="number"
-                    min="0"
-                    id="lot-size"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="5000"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="zoning"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Zoning
-                  </label>
-                  <input
-                    v-model="property.zoning"
-                    type="text"
-                    id="zoning"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="R-1"
-                  />
-                </div>
-              </div>
-            </div>
-          </details>
-
           <!-- Images Section -->
           <div
             class="bg-zinc-900/50 backdrop-blur-sm rounded-xl border border-zinc-800 p-4 sm:p-6 shadow-xl"
@@ -636,331 +489,43 @@
             </div>
           </div>
 
-          <!-- Deal Information -->
-          <details
-            class="group bg-zinc-900/50 backdrop-blur-sm rounded-xl border border-zinc-800 shadow-xl overflow-hidden"
-            open
+          <!-- Documents Link -->
+          <div
+            class="bg-zinc-900/50 backdrop-blur-sm rounded-xl border border-zinc-800 p-4 sm:p-6 shadow-xl"
           >
-            <summary
-              class="cursor-pointer p-4 sm:p-6 hover:bg-zinc-800/30 transition-colors duration-200 flex items-center justify-between"
+            <h3
+              class="text-lg sm:text-xl font-semibold text-white mb-4 flex items-center"
             >
-              <h3
-                class="text-lg sm:text-xl font-semibold text-white flex items-center"
-              >
-                <svg
-                  class="w-5 h-5 mr-2 text-gold"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Deal Information
-                <span class="ml-2 text-xs text-accent-red">* Required</span>
-              </h3>
               <svg
-                class="w-5 h-5 text-zinc-500 transform group-open:rotate-180 transition-transform duration-200"
+                class="w-5 h-5 mr-2 text-gold"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
                 <path
                   fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"
                   clip-rule="evenodd"
                 />
               </svg>
-            </summary>
+              Documents
+            </h3>
 
-            <div class="p-4 sm:p-6 pt-0 border-t border-zinc-800">
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div>
-                  <label
-                    for="purchase_price"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Purchase Price <span class="text-accent-red">*</span>
-                  </label>
-                  <input
-                    v-model.number="property.purchase_price"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    id="purchase_price"
-                    required
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="250000"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="balance_to_close"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Balance to Close <span class="text-accent-red">*</span>
-                  </label>
-                  <input
-                    v-model.number="property.balance_to_close"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    id="balance_to_close"
-                    required
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="10000"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="monthly_holding_cost"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Monthly Holding Cost <span class="text-accent-red">*</span>
-                  </label>
-                  <input
-                    v-model.number="property.monthly_holding_cost"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    id="monthly_holding_cost"
-                    required
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="1500"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="interest_rate"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Interest Rate (%) <span class="text-accent-red">*</span>
-                  </label>
-                  <input
-                    v-model.number="property.interest_rate"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    max="100"
-                    id="interest_rate"
-                    required
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="5.5"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="assignment_fee"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Assignment Fee
-                  </label>
-                  <input
-                    v-model.number="property.assignment_fee"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    id="assignment_fee"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="5000"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="escrow"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Escrow
-                  </label>
-                  <input
-                    v-model.number="property.escrow"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    id="escrow"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="2000"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="deal_holder"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Deal Holder <span class="text-accent-red">*</span>
-                  </label>
-                  <input
-                    v-model="property.deal_holder"
-                    type="text"
-                    id="deal_holder"
-                    required
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="deal_holder_phone"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Deal Holder Phone
-                  </label>
-                  <input
-                    v-model="property.deal_holder_phone"
-                    type="tel"
-                    id="deal_holder_phone"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="(123) 456-7890"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="deal_holder_email"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Deal Holder Email
-                  </label>
-                  <input
-                    v-model="property.deal_holder_email"
-                    type="email"
-                    id="deal_holder_email"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="email@example.com"
-                  />
-                </div>
-
-                <div class="sm:col-span-2 lg:col-span-3">
-                  <label
-                    for="transaction_document_url"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Transaction Document URL
-                  </label>
-                  <input
-                    v-model="property.transaction_document_url"
-                    type="url"
-                    id="transaction_document_url"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="https://docs.google.com/..."
-                  />
-                </div>
-
-                <div class="sm:col-span-2 lg:col-span-3">
-                  <label
-                    for="docs_url"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Docs URL <span class="text-accent-red">*</span>
-                  </label>
-                  <input
-                    v-model="property.docs_url"
-                    type="url"
-                    id="docs_url"
-                    required
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                    placeholder="https://docs.google.com/..."
-                  />
-                </div>
-
-                <div class="sm:col-span-2 lg:col-span-3">
-                  <label
-                    for="price_breakdown"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Price Breakdown Notes <span class="text-accent-red">*</span>
-                  </label>
-                  <textarea
-                    v-model="property.price_breakdown"
-                    id="price_breakdown"
-                    rows="3"
-                    required
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Breakdown of pricing details..."
-                  ></textarea>
-                </div>
-
-                <div class="sm:col-span-2 lg:col-span-3">
-                  <label
-                    for="additional_benefits"
-                    class="block text-sm font-medium text-zinc-400 mb-2"
-                  >
-                    Additional Benefits
-                  </label>
-                  <textarea
-                    v-model="property.additional_benefits"
-                    id="additional_benefits"
-                    rows="3"
-                    class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200 resize-none"
-                    placeholder="Additional benefits and notes..."
-                  ></textarea>
-                </div>
-
-                <div class="flex items-center">
-                  <label
-                    class="flex items-center space-x-3 cursor-pointer group"
-                  >
-                    <div class="relative flex items-center">
-                      <input
-                        v-model="property.in_house_deal"
-                        type="checkbox"
-                        id="in_house_deal"
-                        class="sr-only peer"
-                      />
-                      <div
-                        class="w-11 h-6 bg-zinc-800 rounded-full peer peer-checked:bg-gold transition-colors duration-200"
-                      ></div>
-                      <div
-                        class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-200 peer-checked:translate-x-5"
-                      ></div>
-                    </div>
-                    <span
-                      class="text-sm font-medium text-white group-hover:text-gold transition-colors duration-200"
-                    >
-                      In House Deal
-                    </span>
-                  </label>
-                </div>
-
-                <div class="flex items-center">
-                  <label
-                    class="flex items-center space-x-3 cursor-pointer group"
-                  >
-                    <div class="relative flex items-center">
-                      <input
-                        v-model="property.rental_restriction"
-                        type="checkbox"
-                        id="rental_restriction"
-                        class="sr-only peer"
-                      />
-                      <div
-                        class="w-11 h-6 bg-zinc-800 rounded-full peer peer-checked:bg-accent-red transition-colors duration-200"
-                      ></div>
-                      <div
-                        class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-200 peer-checked:translate-x-5"
-                      ></div>
-                    </div>
-                    <span
-                      class="text-sm font-medium text-white group-hover:text-accent-red transition-colors duration-200"
-                    >
-                      Rental Restriction
-                    </span>
-                  </label>
-                </div>
-              </div>
+            <div>
+              <label
+                for="docs_url"
+                class="block text-sm font-medium text-zinc-400 mb-2"
+              >
+                Docs URL
+              </label>
+              <input
+                v-model="property.docs_url"
+                type="url"
+                id="docs_url"
+                class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
+                placeholder="https://docs.google.com/..."
+              />
             </div>
-          </details>
+          </div>
         </div>
 
         <!-- Form Actions -->
@@ -1311,15 +876,6 @@ watch(() => data.form.address, prepareAndFetchAddress);
 watch(() => data.form.unit_number, prepareAndFetchAddress);
 watch(() => data.form.type, prepareAndFetchAddress);
 watch(() => data.form.is_appartment, prepareAndFetchAddress);
-
-watch(
-  () => property.value.balance_to_close,
-  (newBalance) => {
-    if (newBalance !== null && newBalance !== undefined) {
-      property.value.price = newBalance;
-    }
-  }
-);
 
 const fetchPropertyData = async (url) => {
   try {
