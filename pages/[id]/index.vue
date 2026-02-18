@@ -127,6 +127,12 @@
               </div>
             </div>
 
+            <!-- Deal Holder -->
+            <p v-if="property.deal_holder" class="mt-4 font-medium text-white">
+              <span class="text-zinc-400">Deal Holder:</span>
+              <span class="text-white ml-2">{{ property.deal_holder }}</span>
+            </p>
+
             <!-- Property Details -->
             <section class="mt-4">
               <h3 class="text-xl font-semibold text-white mb-3">

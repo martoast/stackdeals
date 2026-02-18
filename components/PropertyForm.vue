@@ -489,7 +489,7 @@
             </div>
           </div>
 
-          <!-- Documents Link -->
+          <!-- Deal Holder & Documents -->
           <div
             class="bg-zinc-900/50 backdrop-blur-sm rounded-xl border border-zinc-800 p-4 sm:p-6 shadow-xl"
           >
@@ -507,23 +507,41 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              Documents
+              Deal Info & Documents
             </h3>
 
-            <div>
-              <label
-                for="docs_url"
-                class="block text-sm font-medium text-zinc-400 mb-2"
-              >
-                Docs URL
-              </label>
-              <input
-                v-model="property.docs_url"
-                type="url"
-                id="docs_url"
-                class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
-                placeholder="https://docs.google.com/..."
-              />
+            <div class="grid grid-cols-1 gap-4">
+              <div>
+                <label
+                  for="deal_holder"
+                  class="block text-sm font-medium text-zinc-400 mb-2"
+                >
+                  Deal Holder
+                </label>
+                <input
+                  v-model="property.deal_holder"
+                  type="text"
+                  id="deal_holder"
+                  class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
+                  placeholder="John Doe"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="docs_url"
+                  class="block text-sm font-medium text-zinc-400 mb-2"
+                >
+                  Docs URL
+                </label>
+                <input
+                  v-model="property.docs_url"
+                  type="url"
+                  id="docs_url"
+                  class="w-full rounded-lg bg-zinc-800/50 border-zinc-700 text-white px-4 py-2.5 focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-200"
+                  placeholder="https://docs.google.com/..."
+                />
+              </div>
             </div>
           </div>
         </div>
