@@ -127,127 +127,37 @@
               </div>
             </div>
 
-            <!-- Info Sections -->
-            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-              <!-- General Information -->
-              <section>
-                <h3 class="text-xl font-semibold text-white mb-3">
-                  General Information
-                </h3>
-                <div class="space-y-2 text-base text-zinc-300">
-                  <p>
-                    <span class="font-medium text-zinc-400">Property Type:</span>
-                    <span class="text-white ml-2">{{ property.property_type }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Bedrooms:</span>
-                    <span class="text-white ml-2">{{ property.bedrooms }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Bathrooms:</span>
-                    <span class="text-white ml-2">{{ property.bathrooms }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Year Built:</span>
-                    <span class="text-white ml-2">{{ property.year_built ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Lot Size:</span>
-                    <span class="text-white ml-2">{{ property.lot_size ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Living Area:</span>
-                    <span class="text-white ml-2">{{ property.living_area ?? "N/A" }}</span>
-                  </p>
-                </div>
-              </section>
-
-              <!-- Financial Information -->
-              <section>
-                <h3 class="text-xl font-semibold text-white mb-3">
-                  Financial Information
-                </h3>
-                <div class="space-y-2 text-base text-zinc-300">
-                  <p>
-                    <span class="font-medium text-zinc-400">Rent Zestimate:</span>
-                    <span class="text-white ml-2">{{ formatCurrency(property.rent_zestimate) ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Zestimate:</span>
-                    <span class="text-white ml-2">{{ formatCurrency(property.zestimate) ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Price per Square Foot:</span>
-                    <span class="text-white ml-2">{{ formatCurrency(property.price_per_square_foot) ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Zoning:</span>
-                    <span class="text-white ml-2">{{ property.zoning ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Purchase Price:</span>
-                    <span class="text-white ml-2">{{ formatCurrency(property.purchase_price) ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Balance to Close:</span>
-                    <span class="text-white ml-2">{{ formatCurrency(property.balance_to_close) ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Monthly Holding Cost:</span>
-                    <span class="text-white ml-2">{{ formatCurrency(property.monthly_holding_cost) ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Monthly HOA Fee:</span>
-                    <span class="text-white ml-2">{{ formatCurrency(property.monthly_hoa_fee) ?? "N/A" }}</span>
-                  </p>
-                  <p>
-                    <span class="font-medium text-zinc-400">Interest Rate:</span>
-                    <span class="text-white ml-2">
-                      {{
-                        property.interest_rate
-                          ? `${parseFloat(property.interest_rate)}%`
-                          : "N/A"
-                      }}
-                    </span>
-                  </p>
-                </div>
-              </section>
-            </div>
-
-            <section class="mt-4 space-y-3">
-              <div v-if="formattedPriceBreakdown.length" class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-4">
-                <h3 class="text-lg font-semibold text-white mb-2">
-                  Price Breakdown
-                </h3>
-                <ul class="space-y-2">
-                  <li
-                    v-for="(item, index) in formattedPriceBreakdown"
-                    :key="index"
-                    class="text-zinc-300"
-                  >
-                    - {{ item }}
-                  </li>
-                </ul>
-              </div>
-
-              <div v-if="formattedBenefits.length" class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-4">
-                <h3 class="text-lg font-semibold text-white mb-2">
-                  Additional Benefits
-                </h3>
-                <ul class="space-y-2">
-                  <li
-                    v-for="(item, index) in formattedBenefits"
-                    :key="index"
-                    class="text-zinc-300"
-                  >
-                    - {{ item }}
-                  </li>
-                </ul>
+            <!-- Property Details -->
+            <section class="mt-4">
+              <h3 class="text-xl font-semibold text-white mb-3">
+                Property Details
+              </h3>
+              <div class="space-y-2 text-base text-zinc-300">
+                <p v-if="property.property_type">
+                  <span class="font-medium text-zinc-400">Property Type:</span>
+                  <span class="text-white ml-2">{{ property.property_type }}</span>
+                </p>
+                <p v-if="property.bedrooms">
+                  <span class="font-medium text-zinc-400">Bedrooms:</span>
+                  <span class="text-white ml-2">{{ property.bedrooms }}</span>
+                </p>
+                <p v-if="property.bathrooms">
+                  <span class="font-medium text-zinc-400">Bathrooms:</span>
+                  <span class="text-white ml-2">{{ property.bathrooms }}</span>
+                </p>
+                <p v-if="property.living_area">
+                  <span class="font-medium text-zinc-400">Living Area:</span>
+                  <span class="text-white ml-2">{{ property.living_area }} sq ft</span>
+                </p>
+                <p v-if="property.monthly_hoa_fee">
+                  <span class="font-medium text-zinc-400">Monthly HOA Fee:</span>
+                  <span class="text-white ml-2">{{ formatCurrency(property.monthly_hoa_fee) }}</span>
+                </p>
               </div>
             </section>
 
             <!-- Description -->
-            <section class="mt-6">
+            <section v-if="property.description" class="mt-6">
               <h3 class="text-xl font-semibold text-white mb-3">Description</h3>
               <div class="space-y-2 text-base text-zinc-300">
                 <p>{{ property.description }}</p>
@@ -255,7 +165,7 @@
             </section>
 
             <!-- Contact Recipients -->
-            <section class="mt-6">
+            <section v-if="property.contact_recipients?.length" class="mt-6">
               <h3 class="text-xl font-semibold text-white mb-3">
                 Contact Recipients
               </h3>
@@ -266,13 +176,13 @@
                   class="flex items-center space-x-4 bg-zinc-900/50 border border-zinc-800 rounded-lg p-4"
                 >
                   <img
+                    v-if="recipient.image_url"
                     :src="recipient.image_url"
                     :alt="recipient.display_name"
                     class="w-16 h-16 rounded-full object-cover border-2 border-zinc-800"
                   />
                   <div>
                     <p class="font-medium text-white">{{ recipient.display_name }}</p>
-
                     <p class="text-sm text-zinc-400">
                       Phone:
                       <span class="text-zinc-300">
@@ -288,143 +198,6 @@
                     </p>
                   </div>
                 </div>
-              </div>
-            </section>
-
-            <section v-if="filteredNearbyHomes.length" class="mt-6">
-              <h3 class="text-xl font-semibold text-white mb-3">Nearby Homes</h3>
-              <div class="overflow-x-auto">
-                <table class="min-w-full bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-hidden">
-                  <thead class="bg-zinc-900">
-                    <tr>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">
-                        Address
-                      </th>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">Price</th>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">
-                        Lot Size
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr
-                      v-for="home in filteredNearbyHomes"
-                      :key="home.address.streetAddress"
-                      class="hover:bg-zinc-800/50 transition-colors"
-                    >
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ home.address.streetAddress }}
-                      </td>
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ formatCurrency(home.price) }}
-                      </td>
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ home.lotSize.toLocaleString() }}
-                        {{ home.livingAreaUnits }}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            <!-- Price History -->
-            <section class="mt-6">
-              <h3 class="text-xl font-semibold text-white mb-3">Price History</h3>
-              <div class="overflow-x-auto">
-                <table class="min-w-full bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-hidden">
-                  <thead class="bg-zinc-900">
-                    <tr>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">Date</th>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">Event</th>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr
-                      v-for="price in property.price_history"
-                      :key="price.date"
-                      class="hover:bg-zinc-800/50 transition-colors"
-                    >
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{
-                          price.date
-                            ? new Date(price.date).toLocaleDateString()
-                            : "N/A"
-                        }}
-                      </td>
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ price.event }}
-                      </td>
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ formatCurrency(price.price) }}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            <section class="mt-6">
-              <h3 class="text-xl font-semibold text-white mb-3">Nearby schools</h3>
-              <div class="overflow-x-auto">
-                <table class="min-w-full bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-hidden">
-                  <thead class="bg-zinc-900">
-                    <tr>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">Name</th>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">Rating</th>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">
-                        Distance
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr
-                      v-for="school in property.nearby_schools"
-                      :key="school.name"
-                      class="hover:bg-zinc-800/50 transition-colors"
-                    >
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ school.name }}
-                      </td>
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ school.rating }}
-                      </td>
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ convertMilesToKilometers(school.distance) }} km
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            <!-- Tax History -->
-            <section v-if="filteredTaxHistory.length" class="mt-6">
-              <h3 class="text-xl font-semibold text-white mb-3">Tax History</h3>
-              <div class="overflow-x-auto">
-                <table class="min-w-full bg-zinc-900/50 border border-zinc-800 rounded-lg overflow-hidden">
-                  <thead class="bg-zinc-900">
-                    <tr>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">Year</th>
-                      <th class="py-3 px-4 border-b border-zinc-800 text-left text-sm font-semibold text-zinc-300">Amount</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr 
-                      v-for="tax in filteredTaxHistory" 
-                      :key="tax.time"
-                      class="hover:bg-zinc-800/50 transition-colors"
-                    >
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ new Date(tax.time).getFullYear() }}
-                      </td>
-                      <td class="py-3 px-4 border-b border-zinc-800 text-white text-sm">
-                        {{ formatCurrency(tax.taxPaid) }}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </section>
           </div>
@@ -453,22 +226,7 @@ await useAsyncData("property", () => store.find(route.params.id));
 
 const property = computed(() => ({
   ...(store.property || {}),
-  nearby_hospitals: store.property.nearby_hospitals
-    ? JSON.parse(store.property.nearby_hospitals)
-    : [],
-  nearby_schools: store.property.nearby_schools
-    ? JSON.parse(store.property.nearby_schools)
-    : [],
-  nearby_homes: store.property.nearby_homes
-    ? JSON.parse(store.property.nearby_homes)
-    : [],
   images: store.property?.images ? JSON.parse(store.property.images) : [],
-  tax_history: store.property.tax_history
-    ? JSON.parse(store.property.tax_history)
-    : [],
-  price_history: store.property.price_history
-    ? JSON.parse(store.property.price_history)
-    : [],
   contact_recipients: store.property.contact_recipients
     ? JSON.parse(store.property.contact_recipients)
     : [],
@@ -482,38 +240,6 @@ function openModal(index) {
   isModalOpen.value = true;
 }
 
-const filteredTaxHistory = computed(() => {
-  const taxHistory = property.value?.tax_history;
-  return Array.isArray(taxHistory)
-    ? taxHistory.filter((tax) => tax?.taxPaid)
-    : [];
-});
-
-const filteredNearbyHomes = computed(() => {
-  const homes = property.value?.nearby_homes;
-  if (!Array.isArray(homes)) return [];
-
-  return homes.filter(
-    (home) => home?.address?.streetAddress && home?.price && home?.lotSize
-  );
-});
-
-const formattedPriceBreakdown = computed(() => {
-  if (!property.value?.price_breakdown) return [];
-  return property.value.price_breakdown
-    .split("-")
-    .filter((item) => item.trim())
-    .map((item) => item.trim());
-});
-
-const formattedBenefits = computed(() => {
-  if (!property.value?.additional_benefits) return [];
-  return property.value.additional_benefits
-    .split("-")
-    .filter((item) => item.trim())
-    .map((item) => item.trim());
-});
-
 function formatCurrency(value) {
   if (typeof value !== "number") {
     return value;
@@ -526,9 +252,5 @@ function formatCurrency(value) {
 
 const hanldeBackButton = async () => {
   await navigateTo("/");
-};
-
-const convertMilesToKilometers = (miles) => {
-  return (miles * 1.60934).toFixed(2);
 };
 </script>
